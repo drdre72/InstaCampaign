@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+output/
+secrets/
+*.db
+*.db-shm
+*.db-wal
+models/
+assets/personas/
+plans/*.json
+!plans/.gitkeep
+.DS_Store
+Thumbs.db

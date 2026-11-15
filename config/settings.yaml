@@ -1,0 +1,29 @@
+project: instacampaign
+
+# Hard ceiling for all generated + published content. Validators enforce it.
+rating: sfw
+
+jobs:
+  serial: true          # one generation job at a time
+
+comfy:
+  base_url: http://127.0.0.1:8188
+  timeout_s: 900
+  workflow: comfy/workflows/persona_flux.json
+
+qc:
+  face_similarity_min: 0.55   # ArcFace cosine similarity vs reference sheet
+  nsfw_max: 0.2               # opennsfw2 score ceiling
+
+reels:
+  fps: 30
+  max_mb: 1024
+  bitrate_max_mbps: 25
+
+publishing:
+  uploads_enabled: false      # dormant adapter; operator uploads manually
+  platform: instagram
+
+paths:
+  output: output
+  secrets: secrets

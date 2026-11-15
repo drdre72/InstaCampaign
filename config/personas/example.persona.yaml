@@ -1,0 +1,33 @@
+# Persona spec — validated by `python main.py persona validate <file>`.
+# The disclosure string is required and must state the persona is
+# AI/generated/virtual. content.rating is capped at sfw/pg13.
+
+name: example
+display_name: "Example Persona"
+bio: "virtual fitness & lifestyle — AI-generated | shoots everywhere, exists nowhere"
+disclosure: "AI-generated virtual model"
+
+identity:
+  # Drop 4-12 generated reference headshots here before first render.
+  # The face gate compares every generated image against this sheet.
+  reference_dir: assets/personas/example/reference
+  style_prompt: >-
+    photo of a 26-year-old woman, athletic build, shoulder-length auburn
+    hair, green eyes, freckles, natural makeup, candid lifestyle
+    photography, shot on 35mm, soft daylight
+  negative_prompt: >-
+    deformed, extra fingers, watermark, text, logo, nsfw, nude, explicit,
+    plastic skin, oversaturated
+
+content:
+  rating: pg13
+  themes:
+    - "gym session, leggings and crop top, gym equipment background"
+    - "morning coffee at a sunlit cafe table, oversized sweater"
+    - "city street walk, denim jacket, golden hour"
+    - "stretching routine on a yoga mat by a window"
+  banned: [nudity, explicit, gore, lingerie-explicit, see-through]
+
+posting:
+  cadence_per_week: 4
+  platforms: [instagram]
